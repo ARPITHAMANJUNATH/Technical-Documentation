@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</head>
+<nav id="navbar">
+  <header>CSS Documentation</header>
+  <ul> 
+    <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
+    <a class="nav-link" href="#selectors" rel="internal"><li>Selectors</li></a>
+    <a class="nav-link" href="#background" rel="internal"><li>Background</li></a>
+    <a class="nav-link" href="#box_model" rel="internal"><li>Box Model</li></a>
+    <a class="nav-link" href="#margins" rel="internal"><li>Margins</li></a>
+    <a class="nav-link" href="#padding" rel="internal"><li>Padding</li></a>
+    <a class="nav-link" href="#border" rel="internal"><li>Border</li></a>
+    <a class="nav-link" href="#outline" rel="internal"><li>Outline</li></a>
+    <a class="nav-link" href="#colors" rel="internal"><li>Colors</li></a>
+    <a class="nav-link" href="#fonts" rel="internal"><li>Fonts</li></a>
+   
+    <a class="nav-link" href="#layouts" rel="internal"><li>Layouts</li></a>
+    <a class="nav-link" href="#grid" rel="internal"><li>Grid</li></a>
+    <a class="nav-link" href="#tables" rel="internal"><li>Tables</li></a>
+    <a class="nav-link"href="#reference" rel="internal"><li>Reference</li></a>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article> <h1>External CSS</h1> 
+      <p>
+An external CSS stylesheet can be applied to any number of HTML documents by placing a <link> element in each
+HTML document.
+The attribute rel of the <link> tag has to be set to "stylesheet", and the href attribute to the relative or absolute
+path to the stylesheet. While using relative URL paths is generally considered good practice, absolute paths can be
+used, too. In HTML5 the type attribute can be omitted.
+It is recommended that the <link> tag be placed in the HTML file's <head> tag so that the styles are loaded before
+the elements they style. Otherwise, users will see a flash of unstyled content.</p>
+
+<code>Example
+hello-world.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Hello world!</h1>
+<p>I ♥ CSS</p>
+</body>
+</html>
+style.css
+h1 {
+color: green;
+text-decoration: underline;
+}
+p {
+font-size: 25px;
+font-family: 'Trebuchet MS', sans-serif;
+}
+        </code>
+
+
+      </artice>
+    </section>
+  <section class="main-section" id="selectors">
+    <header>Selectors</header>
+    <article>
+      <p>CSS selectors identify specific HTML elements as targets for CSS styles. This topic covers how CSS selectors target
+HTML elements. Selectors use a wide range of over 50 selection methods offered by the CSS language, including
+elements, classes, IDs, pseudo-elements and pseudo-classes, and patterns.</p>
+
+    
+      </artice>
+    </section>
+  <section class="main-section" id="background">
+    <header>Background </header>
+    <article>
+    <p>With CSS you can set colors, gradients, and images as the background of an element.
+It is possible to specify various combinations of images, colors, and gradients, and adjust the size, positioning, and
+repetition (among others) of these.</p>
+
+<p>The background-color property sets the background color of an element using a color value or through keywords,
+such as transparent, inherit or initial.</p>
+      <ul>
+        <li>transparent, specifies that the background color should be transparent. This is default</li>
+        <li>   inherit, inherits this property from its parent element.     </li>
+        <li>initial, sets this property to its default value.</li></ul>
+
+<p>This can be applied to all elements, and ::first-letter/::first-line pseudo-elements.
+Colors in CSS can be specified by different methods.</p>
+    </article>
+    </section>
+  <section class="main-section" id="box_model">
+    <header>Box Model</header>
+    <article> 
+The browser creates a rectangle for each element in the HTML document. The Box Model describes how the
+padding, border, and margin are added to the content to create this rectangle.
+<ul>
+  <li>The innermost rectangle is the content box. The width and height of this depends on the element's
+rendered content (text, images and any child elements it may have).</li>
+  <li>Next is the padding box, as defined by the padding property. If there is no padding width defined, the
+padding edge is equal to the content edge</li>
+  <li>Then we have the border box, as defined by the border property. If there is no border width defined, the
+border edge is equal to the padding edge.</li>
+      </ul>
+    </article>
+    </section>
+  <section class="main-section" id="margins">
+    <header>Margins</header>
+    <p>
+When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally,
+they do not collapse.
+Example of adjacent vertical margins:
+Consider the following styles and markup:
+    </p>
+    <code>div{
+margin: 10px;
+}
+<div>
+some content
+</div>
+<div>
+some more content
+</div></code>
+    <p>
+They will be 10px apart since vertical margins collapse over one and other. (The spacing will not be the sum of two
+margins.)
+    </p>
+   
+    </section>
+  <section class="main-section" id="padding">
+    <header>Padding</header>
+    <article>
+You can declare a variable in three ways:
+      <p>
+      The padding property sets the padding space on all sides of an element. The padding area is the space between the
+content of the element and its border. Negative values are not allowed.
+To save adding padding to each side individually (using padding-top, padding-left etc) can you write it as a
+        shorthand, as below:</p><code><style>
+.myDiv {
+padding: 25px 50px 75px 100px; /* top right bottom left; */
+}
+</style>
+<div class="myDiv"></div></code>
+      
+    
+    </article>
+    </section>
+  <section class="main-section" id="border">
+    <header>Border</header>
+    <article>
+     <p> The border-radius property allows you to change the shape of the basic box model.
+Every corner of an element can have up to two values, for the vertical and horizontal radius of that corner (for a
+maximum of 8 values).</p>
+
+<p>The first set of values defines the horizontal radius. The optional second set of values, preceded by a ‘/’ , defines the
+vertical radius. If only one set of values is supplied, it is used for both the vertical and horizontal radius.</p>
+<code>border-radius: 10px 5% / 20px 25em 30px 35em;</code>
+      <p>The 10px is the horizontal radius of the top-left-and-bottom-right. And the 5% is the horizontal radius of the topright-
+and-bottom-left. The other four values after '/' are the vertical radii for top-left, top-right, bottom-right and
+bottom-left.</p>
+
+    </article>
+    </section>
+  <section class="main-section" id="outline">
+    <header>Outline</header>
+    <article>
+<p>Outline is a line that goes around the element, outside of the border. In contrast to border, outlines do not take any
+space in the box model. So adding an outline to an element does not affect the position of the element or other
+elements.</p>
+
+<p>In addition, outlines can be non-rectangular in some browsers. This can happen if outline is applied on a span
+element that has text with different font-size properties inside it. Unlike borders, outlines cannot have rounded
+corners.</p>
+    </article>
+    </section>
+  <section class="main-section" id="colors">
+    <header>Colors</header>
+    <article>
+<p>Here currentColor evaluates to red since the color property is set to red:
+</p>
+
+      <code>div {
+color: red;
+border: 5px solid currentColor;
+box-shadow: 0 0 5px currentColor;
+}</code>
+<p>In this case, specifying currentColor for the border is most likely redundant because omitting it should produce
+identical results. Only use currentColor inside the border property within the same element if it would be
+overwritten otherwise due to a more specific selector.</p>
+
+
+<p>Since it's the computed color, the border will be green in the following example due to the second rule overriding
+the first:</p>
+
+<code>div {
+color: blue;
+border: 3px solid currentColor;
+color: green;
+}</code>
+
+    </article>
+    </section>
+  <section class="main-section" id="fonts">
+    <header>Fonts</header>
+    <article>
+      <p>The latest ECMAScript standard defines seven data types:</p>
+      <li><p>Six data types that are primitives:</p>
+<ul>
+  <li>Boolean. true and false.</li>
+<li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+  <li>undefined. A top-level property whose value is undefined.</li>
+<li>Number. 42 or 3.14159.</li>
+  <li>String. "Howdy"</li>
+        <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li></ul>
+      <li>and Object</li>
+Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.
+    </article>
+    </section>
+  <section class="main-section" id="layouts">
+    <header>layouts</header>
+    <article>
+The display CSS property is fundamental for controlling the layout and flow of an HTML document. Most elements
+have a default display value of either block or inline (though some elements have other default values).
+      <p>An inline element occupies only as much width as necessary. It stacks horizontally with other elements of the
+same type and may not contain other non-inline elements.</p>
+
+<code><span>This is some <b>bolded</b> text!</span>
+</code>
+
+<p>
+As demonstrated above, two inline elements, <span> and <b>, are in-line (hence the name) and do not break the
+flow of the text.
+  </p>
+  <p>A block element occupies the maximum available width of its' parent element. It starts with a new line and, in
+contrast to inline elements, it does not restrict the type of elements it may contain.</p>
+<code><div>Hello world!</div><div>This is an example!</div></code>
+
+
+
+
+
+    </article>
+    </section>
+  
+  <section class="main-section" id="grid">
+    <header>Grid</header>
+    <article> 
+Grid layout is a new and powerful CSS layout system that allows to divide a web page content into rows and
+columns in an easy way.
+
+     
+      <p>The CSS Grid is defined as a display property. It applies to a parent element and its immediate children only.
+Consider the following markup:</P>
+
+<code><section class="container">
+<div class="item1">item1</div>
+<div class="item2">item2</div>
+<div class="item3">item3</div>
+<div class="item4">item4</div>
+</section>
+</code>
+<p>The easiest way to define the markup structure above as a grid is to simply set its display property to grid:
+    </p>
+    <code>.container {
+display: grid;
+}</code>
+<p>However, doing this will invariably cause all the child elements to collapse on top of one another. This is because
+the children do not currently know how to position themselves within the grid. But we can explicitly tell them.</p>
+    <p>First we need to tell the grid element .container how many rows and columns will make up its structure and we
+can do this using the grid-columns and grid-rows properties (note the pluralisation):</p>
+    <code>.container {
+display: grid;
+grid-columns: 50px 50px 50px;
+grid-rows: 50px 50px;
+}</code>
+    </article>
+    </section>
+  <section class="main-section" id="tables">
+    <header>Tables</header>
+    <article>
+      <p>The table-layout property changes the algorithm that is used for the layout of a table</p>
+      <p>The table on the left has table-layout: auto while the one on the right has table-layout: fixed. The former is
+wider than the specified width (210px instead of 150px) but the contents fit. The latter takes the defined width of
+150px, regardless if the contents overflow or not.</p>
+    </article>
+  </section>
+  <section class="main-section" id="reference">
+    <header>Reference</header>
+    <article>
+     All the documentation in this page is taken from <a href="https://www.w3schools.com/css/default.asp" target="_blank">w3schools</a>
+    </article>
+    </section>
+</main>
+</html>
